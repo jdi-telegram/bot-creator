@@ -1,0 +1,95 @@
+{
+  "screens": [
+    {
+      "command": "/start",
+      "description": "Главный экран",
+      "image": "together.png",
+      "text": "Здесь каждый может создать своего бота.\nДля этого не нужно иметь никаких специальных знаний, быть программистом или работать в IT",
+      "buttons": [
+        [
+          { "text": "Создать моего бота", "callback_data": "create_bot" }
+        ],
+        [
+          { "text": "Мануал", "callback_data": "manual" },
+          { "text": "Документация", "callback_data": "documentation" }
+        ]
+      ]
+    },
+    {
+      "command": "/create_bot",
+      "description": "Создать бота",
+      "image": "bot-father.png",
+      "text": "Для создания своего Телеграм бота вам надо [зарегистрировать](https://lifehacker.ru/kak-sozdat-bota-v-telegram) его с помощью @BotFather.\nДля создания бота далее вам понадоится Token и название вашего бота",
+      "buttons": [
+        [ { "text":  "Продолжить", "callback_data":  "create_flow_bot"} ],
+        [ { "text":  "Назад", "callback_data":  "start"} ]
+      ]
+    },
+    {
+      "command": "/create_flow_bot",
+      "text": "Введите пожалуйста Токен вашего Телеграм бота",
+      "event": "create_flow_bot"
+    },
+    {
+      "command": "/create_bot_choice",
+      "text": "***Бот пример***: создать бот с флоу по умолчанию\n***Создать бота***: Если вы хотите создать бота на основе json нструкции: нажмите\n***Инструкция***: Если вы хотите ознакомится как настроить бота",
+      "buttons":     [
+        [
+          { "text": "Бот пример", "callback_data": "create_default_bot"},
+          { "text": "Создать бота", "callback_data": "create_setup_bot"}
+        ],
+        [
+          { "text": "Инструкция", "callback_data": "manual"},
+          { "text": "Назад", "callback_data": "start"}
+        ]
+      ]
+    },
+    {
+      "command": "/create_default_bot",
+      "event": "create_default_bot"
+    },
+    {
+      "command": "/create_setup_bot",
+      "text": "Upload flow json file",
+      "event": "create_setup_bot"
+    },
+    {
+      "command": "/manual",
+      "description": "Мануал",
+      "text": "Страница Мануала 1",
+      "buttons": [
+        [ { "text":  "Далее", "callback_data":  "manual_two"} ],
+        [ { "text":  "Назад", "callback_data":  "start"} ]
+      ]
+    },
+    {
+      "command": "/manual_two",
+      "text": "Страница Мануала 2",
+      "buttons": [
+        [ { "text":  "В начало", "callback_data":  "start" } ],
+        [ { "text":  "Назад", "callback_data":  "manual" } ]
+      ]
+    },
+    {
+      "command": "/documentation",
+      "text": "Документация",
+      "buttons": [
+        [ { "text":  "Назад", "callback_data":  "start" } ]
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "create_flow_bot",
+      "command": "/create_bot_choice"
+    },
+    {
+      "name": "create_default_bot",
+      "command": "/start"
+    },
+    {
+      "name": "create_setup_bot",
+      "command": "/start"
+    }
+  ]
+}

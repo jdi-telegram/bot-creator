@@ -1,0 +1,34 @@
+{
+  "screens": [
+    {
+      "command": "/start",
+      "description": "Start screen",
+      "image": "start.jpg",
+      "text": "Hello world",
+      "buttons": [
+        [
+          { "text": "Sun", "callback_data": "sun" }
+        ],
+        [
+          { "text": "Sky", "callback_data": "sky" }
+        ]
+      ]
+    },
+    {
+      "command": "/sun",
+      "image": "sun.png",
+      "text": "New text about sun",
+      "buttons": [ [ { "text":  "Back", "callback_data":  "start"} ] ]
+    },
+    {
+      "command": "/sky",
+      "image": "sky.png",
+      "text": "Some info about sky",
+      "buttons": [ [
+        { "text":  "Sun", "callback_data":  "sun"},
+        { "text":  "Back", "callback_data":  "start"}
+      ] ]
+    }
+  ],
+  "events": [ ]
+}
