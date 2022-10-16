@@ -4,6 +4,7 @@ logs
 build/
 src/fb/
 node_modules/
+flow-bot/data
 .eslintcache
 *.tgz
 .env
